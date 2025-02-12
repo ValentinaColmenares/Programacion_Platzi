@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Piedra, papel o tijera</title>
+        <script>
+
+            // ELECCIÓN DEL JUGADOR
+            // 1 es piedra, 2 es papel, 3 es tijera
+            let jugador = 0
+            jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera 🤔")
+            
+            // ELECCIÓN DE LA COMPUTADORA
+            let pc = 3
+
+            // INFORMANDO LA ELECCIÓN DEL JUGADOR
+            //alert("Elegiste " + jugador)
+            if (jugador == 1){
+                alert("Elegiste 🪨")
+            }else if(jugador == 2){
+                alert("Elegiste 📄")
+            }else if(jugador == 3){
+                alert("Elegiste ✂️")
+            }else{
+                alert("Elegiste otra cosa, así no puedes jugar 😣")
+            }
+
+            // INFORMANDO LA ELECCIÓN DEL COMPUTADOR
+            if (pc == 1){
+                alert("El computador eligió 🪨")
+            }else if(pc == 2){
+                alert("El computador eligió 📄")
+            }else if(pc == 3){
+                alert("El computador eligió ✂️")
+            }else{
+                alert("Cometí un error programando la elección del computador 🙃")
+            }
+
+            // VEREDICTO FINAL
+            if ((jugador == 1 && pc == 2) || (jugador == 2 && pc == 3) || (jugador == 3 && pc == 1)){
+                alert("PERDISTE... 😒🥈")
+            }else if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)){
+                alert("¡¡¡GANASTE!!! 🍾🤩")
+            }else if(jugador == pc && (jugador == 1 || jugador == 2 || jugador == 3)){
+                alert("¡EMPATE! 🤼")
+            }else{
+                alert("Alguien no entendió las reglas del juego 🤨")
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Piedra, papel o tijera</h1>
+    </body>
+</html>
