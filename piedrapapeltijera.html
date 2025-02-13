@@ -5,41 +5,46 @@
         <title>Piedra, papel o tijera</title>
         <script>
 
+            // FUNCIÓN PARA LA ELECCIÓN DEL COMPUTADOR
+            function eligePC(min, max){
+                return Math.floor(Math.random()*(max-min+1)+min) 
+            }
+
             // FUNCIÓN QUE INFORMA LA ELECCIÓN DEL JUGADOR Y DEL COMPUTADOR
-            function mostrarEleccion(siJugador, eleccion){
+            function mostrarEleccion(quienElige, eleccion){
                 if (eleccion == 1){
-                    return " 🪨"
+                    alert("El " + quienElige + " eligió 🪨")
                 }else if(eleccion == 2){
-                    return " 📄"
+                    alert("El " + quienElige + " eligió 📄")
                 }else if(eleccion == 3){
-                    return " ✂️"
-                }else if (siJugador && (eleccion != 1 || eleccion != 2 || eleccion != 3)){
-                    return " otra cosa, así no puedes jugar 😣"
+                    alert("El " + quienElige + " eligió ✂️")
                 }else{
-                    return "... Upss cometí un error programando la elección del computador 🙃"
+                    alert("Hubo un error con la elección del " + quienElige + " 🙃")
+                }
+            }
+
+            // FUNCIÓN QUE MUESTRA EL RESULTADO FINAL DEL JUEGO
+            function veredicto(jugador1, jugador2){
+                if ((jugador1 == jugador2)){
+                    alert("¡EMPATE! 🤼")
+                }else if ((jugador1 == 1 && jugador2 == 3) || (jugador1 == 2 && jugador2 == 1) || (jugador1 == 3 && jugador2 == 2)){
+                    alert("¡¡¡GANASTE!!! 🍾🤩")
+                }else {
+                    alert("PERDISTE... 😒🥈")
                 }
             }
 
             // ELECCIÓN DEL JUGADOR
             // 1 es piedra, 2 es papel, 3 es tijera
             let jugador = prompt("Elige: 1 para piedra, 2 para papel, 3 para tijera 🤔")
-            alert("Elegiste" + mostrarEleccion(true, jugador))
+            mostrarEleccion("jugador", jugador)
 
             // ELECCIÓN DE LA COMPUTADORA
-            function eligePC(min, max){
-                return Math.floor(Math.random()*(max-min+1)+min) 
-            }
             let pc = eligePC(1, 3)
-            alert("PC elige" + mostrarEleccion(false, pc))
+            mostrarEleccion("computador", pc)
 
             // VEREDICTO FINAL
-            if ((jugador == pc)){
-                alert("¡EMPATE! 🤼")
-            }else if ((jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2)){
-                alert("¡¡¡GANASTE!!! 🍾🤩")
-            }else {
-                alert("PERDISTE... 😒🥈")
-            }
+            veredicto(jugador, pc)
 
         </script>
     </head>
