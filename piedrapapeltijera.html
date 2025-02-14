@@ -27,12 +27,18 @@
             function veredicto(jugador1, jugador2){
                 if ((jugador1 == jugador2)){
                     alert("¡EMPATE! 🤼")
+                    empates++
                 }else if ((jugador1 == 1 && jugador2 == 3) || (jugador1 == 2 && jugador2 == 1) || (jugador1 == 3 && jugador2 == 2)){
                     alert("¡¡¡GANASTE!!! 🍾🤩")
+                    victorias++
                 }else {
                     alert("PERDISTE... 😒🥈")
+                    derrotas++
                 }
             }
+
+            // INICIALIZACIÓN DE VARIABLES
+            let victorias = 0, derrotas = 0, empates = 0
 
             // ELECCIÓN DEL JUGADOR
             // 1 es piedra, 2 es papel, 3 es tijera
