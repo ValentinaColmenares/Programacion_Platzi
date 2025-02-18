@@ -4,14 +4,18 @@ function iniciarJuego(){
 }
 
 function seleccionarMascotaJugador(){
-    if (document.getElementById('hipodoge').checked){
-        alert('SELECCIONASTE HIPODOGE')
-    }else if(document.getElementById('capipepo').checked){
-        alert('SELECCIONASTE CAPIPEPO')
-    }else if(document.getElementById('ratigueya').checked){
-        alert('SELECCIONASTE RATIGUEYA')
+    let inputHipodoge = document.getElementById('hipodoge')
+    let inputCapipepo = document.getElementById('capipepo')
+    let inputRatigueya = document.getElementById('ratigueya')
+
+    if (inputHipodoge.checked){
+        alert('Seleccionaste a Hipodoge')
+    }else if(inputCapipepo.checked){
+        alert('Seleccionaste a Capipepo')
+    }else if(inputRatigueya.checked){
+        alert('Seleccionaste a Ratigueya')
     }else{
-        alert('NO HAS SELECCIONADO TU MASCOTA')
+        alert('Selecciona una mascota')
     }
 }
 
