@@ -1,6 +1,15 @@
+let ataqueJugador
+
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
+    let botonFuego = document.getElementById('boton-fuego')
+    let botonAgua = document.getElementById('boton-agua')
+    let botonTierra = document.getElementById('boton-tierra')
+
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+    botonFuego.addEventListener('click', () => seleccionarAtaqueJugador("Fuego"))
+    botonAgua.addEventListener('click', () => seleccionarAtaqueJugador("Agua"))
+    botonTierra.addEventListener('click', () => seleccionarAtaqueJugador("Tierra"))
 }
 
 function seleccionarMascotaJugador(){
@@ -18,6 +27,41 @@ function seleccionarMascotaJugador(){
     }else{
         alert('Selecciona una mascota')
     }
+
+    if(document.querySelector('input[name="mascota"]:checked') != null){
+        seleccionarMascotaEnemigo()
+    }
+
+}
+
+function seleccionarMascotaEnemigo(){
+    let mascotaEnemigoAleatorio = eligePC(1, 3)
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    
+    if (mascotaEnemigoAleatorio == 1){
+        spanMascotaEnemigo.innerHTML = 'Hipodoge'
+    }else if(mascotaEnemigoAleatorio == 2){
+        spanMascotaEnemigo.innerHTML = 'Capipepo'
+    }else if(mascotaEnemigoAleatorio == 3){
+        spanMascotaEnemigo.innerHTML = 'Ratigueya'
+    }
+}
+
+function seleccionarAtaqueJugador(ataque){
+    let spanAtaqueJugador = document.getElementById('ataque-jugador')
+    ataqueJugador = ataque
+
+    if (ataque == "Fuego"){
+        spanAtaqueJugador.innerHTML = 'Fuego'
+    }else if(ataque == "Agua"){
+        spanAtaqueJugador.innerHTML = 'Agua'
+    }else{
+        spanAtaqueJugador.innerHTML = 'Tierra'
+    }
+}
+
+function eligePC(min, max){
+    return Math.floor(Math.random()*(max-min+1)+min) 
 }
 
 window.addEventListener('load', iniciarJuego)
