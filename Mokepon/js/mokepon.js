@@ -1,4 +1,5 @@
 let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -57,6 +58,21 @@ function seleccionarAtaqueJugador(ataque){
         spanAtaqueJugador.innerHTML = 'Agua'
     }else{
         spanAtaqueJugador.innerHTML = 'Tierra'
+    }
+
+    seleccionarAtaqueEnemigo()
+}
+
+function seleccionarAtaqueEnemigo(){
+    let ataqueEnemigoAleatorio = eligePC(1, 3)
+    let spanAtaqueEnemigo = document.getElementById('ataque-enemigo')
+    
+    if (ataqueEnemigoAleatorio == 1){
+        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Fuego'
+    }else if(ataqueEnemigoAleatorio == 2){
+        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Tierra'
+    }else if(ataqueEnemigoAleatorio == 3){
+        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Agua'
     }
 }
 
