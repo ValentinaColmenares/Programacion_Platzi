@@ -49,31 +49,40 @@ function seleccionarMascotaEnemigo(){
 }
 
 function seleccionarAtaqueJugador(ataque){
-    let spanAtaqueJugador = document.getElementById('ataque-jugador')
     ataqueJugador = ataque
-
-    if (ataque == "Fuego"){
-        spanAtaqueJugador.innerHTML = 'Fuego'
-    }else if(ataque == "Agua"){
-        spanAtaqueJugador.innerHTML = 'Agua'
-    }else{
-        spanAtaqueJugador.innerHTML = 'Tierra'
-    }
 
     seleccionarAtaqueEnemigo()
 }
 
 function seleccionarAtaqueEnemigo(){
     let ataqueEnemigoAleatorio = eligePC(1, 3)
-    let spanAtaqueEnemigo = document.getElementById('ataque-enemigo')
     
     if (ataqueEnemigoAleatorio == 1){
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Fuego'
+        ataqueEnemigo = 'Fuego'
     }else if(ataqueEnemigoAleatorio == 2){
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Tierra'
+        ataqueEnemigo = 'Tierra'
     }else if(ataqueEnemigoAleatorio == 3){
-        spanAtaqueEnemigo.innerHTML = ataqueEnemigo = 'Agua'
+        ataqueEnemigo = 'Agua'
     }
+
+    quienGana()
+}
+
+function quienGana(){
+    if (ataqueJugador == ataqueEnemigo){
+        crearMensaje("Empate 🤝")
+    } else if ((ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra") || (ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") || (ataqueJugador == "Agua" && ataqueEnemigo == "Fuego")){
+        crearMensaje("Ganaste 🎉")
+    }else{
+        crearMensaje("Perdiste ☹️")
+    }
+}
+
+function crearMensaje(veredicto){
+    let sectionMensajes = document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota del enemigo atacó con " + ataqueEnemigo + " - " + veredicto
+    sectionMensajes.appendChild(parrafo)
 }
 
 function eligePC(min, max){
