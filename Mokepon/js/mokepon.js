@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -69,12 +71,19 @@ function seleccionarAtaqueEnemigo(){
 }
 
 function quienGana(){
+    let spanVidasJugador = document.getElementById("vidas-jugador")
+    let spanVidasEnemigo = document.getElementById("vidas-enemigo")
     if (ataqueJugador == ataqueEnemigo){
         crearMensaje("Empate 🤝")
     } else if ((ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra") || (ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") || (ataqueJugador == "Agua" && ataqueEnemigo == "Fuego")){
         crearMensaje("Ganaste 🎉")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else{
         crearMensaje("Perdiste ☹️")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador    
+    
     }
 }
 
