@@ -8,11 +8,13 @@ function iniciarJuego(){
     let botonFuego = document.getElementById('boton-fuego')
     let botonAgua = document.getElementById('boton-agua')
     let botonTierra = document.getElementById('boton-tierra')
+    let botonReiniciar = document.getElementById('boton-reiniciar')
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     botonFuego.addEventListener('click', () => seleccionarAtaqueJugador("Fuego"))
     botonAgua.addEventListener('click', () => seleccionarAtaqueJugador("Agua"))
     botonTierra.addEventListener('click', () => seleccionarAtaqueJugador("Tierra"))
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function seleccionarMascotaJugador(){
@@ -85,6 +87,16 @@ function quienGana(){
         spanVidasJugador.innerHTML = vidasJugador    
     
     }
+
+    revisarVidas()
+}
+
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+        crearMensajeFinal("FELICITACIONES! Ganaste 🥇")
+    } else if(vidasJugador == 0){
+        crearMensajeFinal("Lo siento, perdiste 🥺")
+    }
 }
 
 function crearMensaje(veredicto){
@@ -92,6 +104,25 @@ function crearMensaje(veredicto){
     let parrafo = document.createElement('p')
     parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota del enemigo atacó con " + ataqueEnemigo + " - " + veredicto
     sectionMensajes.appendChild(parrafo)
+}
+
+function crearMensajeFinal(veredictoFinal){
+    let sectionMensajes = document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+    let botonFuego = document.getElementById('boton-fuego')
+    let botonAgua = document.getElementById('boton-agua')
+    let botonTierra = document.getElementById('boton-tierra')
+    
+    parrafo.innerHTML = veredictoFinal
+    sectionMensajes.appendChild(parrafo)
+
+    botonFuego.disabled = true
+    botonAgua.disabled = true
+    botonTierra.disabled = true
+}
+
+function reiniciarJuego(){
+    location.reload()
 }
 
 function eligePC(min, max){
