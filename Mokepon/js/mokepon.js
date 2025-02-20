@@ -4,6 +4,11 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 
 function iniciarJuego(){
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
     let botonFuego = document.getElementById('boton-fuego')
     let botonAgua = document.getElementById('boton-agua')
@@ -18,6 +23,11 @@ function iniciarJuego(){
 }
 
 function seleccionarMascotaJugador(){
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
@@ -31,6 +41,8 @@ function seleccionarMascotaJugador(){
         spanMascotaJugador.innerHTML = 'Ratigueya'
     }else{
         alert('Selecciona una mascota')
+        sectionSeleccionarMascota.style.display = "block" 
+        sectionSeleccionarAtaque.style.display = "none"
     }
 
     if(document.querySelector('input[name="mascota"]:checked') != null){
@@ -107,6 +119,8 @@ function crearMensaje(veredicto){
 }
 
 function crearMensajeFinal(veredictoFinal){
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
     let sectionMensajes = document.getElementById('mensajes')
     let parrafo = document.createElement('p')
     let botonFuego = document.getElementById('boton-fuego')
