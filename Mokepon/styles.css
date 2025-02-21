@@ -1,26 +1,18 @@
 .titulo{
     color: #F5853D;
-    width: 310px;
-    height: 50px;
+    width: 220px;
+    height: 30px;
     background-color: #FCE5C6;
-}
-
-label{
-    background-color: #FCD272;
-    width: 310px;
-    height: 50px;
-}
-
-input{
-    background-color: aqua;
-    width: 80px;
-    height: 16px;
+    padding: 15px;
 }
 
 button{
-    background-color: #FFD9CF;
-    width: 120px;
     height: 40px;
+    width: 136px;
+    background: #FFD9CF;
+    padding: 10px;
+    border: 3px groove #f79479;
+    margin: 20px;
 }
 
 #seleccionar-mascota {
@@ -28,4 +20,18 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.tarjeta-de-mokepon{
+    width: 87px;
+    height: 40px;
+    background: #FCD272;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #F5853D;
+}
+
+input{
+    display: none;
 }
