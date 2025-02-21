@@ -1,24 +1,24 @@
 .titulo{
-    color: hotpink;
+    color: #f5853d/*#FCA872*/;
     width: 310px;
     height: 50px;
-    background-color: teal;
+    background-color: #FCE5C6;
 }
 
 label{
-    background-color: tomato;
+    background-color: #FCD272;
     width: 310px;
     height: 50px;
 }
 
 input{
     background-color: aqua;
-    width: 310px;
-    height: 50px;
+    width: 80px;
+    height: 16px;
 }
 
 button{
-    background-color: blueviolet;
-    width: 310px;
-    height: 50px;
+    background-color: #FFD9CF;
+    width: 120px;
+    height: 40px;
 }
