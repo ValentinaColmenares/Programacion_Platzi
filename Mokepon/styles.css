@@ -1,5 +1,5 @@
 .titulo{
-    color: #f5853d/*#FCA872*/;
+    color: #F5853D;
     width: 310px;
     height: 50px;
     background-color: #FCE5C6;
@@ -21,4 +21,11 @@ button{
     background-color: #FFD9CF;
     width: 120px;
     height: 40px;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
