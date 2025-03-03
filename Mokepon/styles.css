@@ -1,18 +1,9 @@
-.titulo{
-    color: #F5853D;
-    width: 220px;
-    height: 30px;
-    background-color: #FCE5C6;
-    padding: 15px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-button{
-    height: 40px;
-    width: 136px;
-    background: #FFD9CF;
-    padding: 10px;
-    border: 3px groove #f79479;
-    margin: 20px;
+body{
+    font-family: "Darumadrop One", serif;
+    background-color: #FCE5C6;
 }
 
 #seleccionar-mascota {
@@ -22,16 +13,55 @@ button{
     align-items: center;
 }
 
+.titulo{
+    color: #F5853D;
+    font-size: 44px;
+}
+
+.subtitulo {
+    color: #fca738;
+    font-size: 32px;
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+
 .tarjeta-de-mokepon{
-    width: 87px;
-    height: 40px;
+    width: 180px;
+    height: 100px;
     background: #FCD272;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px;
     border: 1px solid #F5853D;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #F79514
+
+}
+
+.tarjeta-de-mokepon img{
+    width: 80px
 }
 
 input{
     display: none;
+}
+
+button{
+    height: 40px;
+    width: 180px;
+    padding: 1px;
+    border: 4px groove #f79479;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: "Darumadrop One", serif;
+    color: #fca738;
+    font-size: 20px;
+    margin-top: 30px;
 }
