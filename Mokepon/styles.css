@@ -52,16 +52,35 @@ input{
     display: none;
 }
 
-button{
+#boton-mascota{
     height: 40px;
     width: 180px;
     padding: 1px;
-    border: 4px groove #f79479;
+    border: 4px groove #F79479;
     margin: 20px;
     border-radius: 20px;
     background-color: transparent;
     font-family: "Darumadrop One", serif;
-    color: #fca738;
+    color: #FCA738;
     font-size: 20px;
     margin-top: 30px;
+}
+
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque {
+    background-color: #FFE4A6; 
+    border-radius: 20px;
+    border-color: transparent;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 116px;
+    font-family: "Darumadrop One", serif;
+    color: #F79514;
+    border: 1px solid #F5853D;
+    margin: 10px;
+    font-size: 18px;
 }
