@@ -111,23 +111,30 @@ function revisarVidas(){
 }
 
 function crearMensaje(veredicto){
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", la mascota del enemigo atacó con " + ataqueEnemigo + " - " + veredicto
-    sectionMensajes.appendChild(parrafo)
+    let sectionMensajes = document.getElementById('resultado')
+    let sectionAtaqueJugador = document.getElementById('ataque-del-jugador')
+    let sectionAtaqueEnemigo = document.getElementById('ataque-del-enemigo')
+
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = veredicto
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    sectionAtaqueJugador.appendChild(nuevoAtaqueJugador)
+    sectionAtaqueEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 
 function crearMensajeFinal(veredictoFinal){
     let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'block'
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
+    let sectionMensajes = document.getElementById('resultado')
     let botonFuego = document.getElementById('boton-fuego')
     let botonAgua = document.getElementById('boton-agua')
     let botonTierra = document.getElementById('boton-tierra')
     
-    parrafo.innerHTML = veredictoFinal
-    sectionMensajes.appendChild(parrafo)
+    sectionMensajes.innerHTML = veredictoFinal
 
     botonFuego.disabled = true
     botonAgua.disabled = true
